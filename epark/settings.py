@@ -10,7 +10,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 
-ALLOWED_HOSTS = ['localhost','https://eparkestacionamento.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost','https://shielded-brushlands-25084.herokuapp.com']
 
 
 # Application definition
