@@ -1,0 +1,20 @@
+<h2>Movimento Rotativo</h2>
+
+<ul>
+    
+    {% for mov in movRotativo  %}
+        <li><a href="{% url 'core_mov_rotativos_update' mov.id%}">{{mov.veiculo.marca}} - 
+            {{mov.veiculo.placa}} - {{mov.checkin}} - {{mov.checkout}} - 
+            {{mov.valor_hora}} - {{mov.total}} - {{mov.pago}}</a></li>
+
+    {% endfor %}
+        
+</ul>
+
+<form action="{% url 'core_mov_rotativos_novo'%}" method="POST">
+    {% csrf_token %}
+    
+    {{form.as_p}}
+
+    <button type="submit">Cadastar</button>
+</form>
