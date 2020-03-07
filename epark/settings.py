@@ -10,7 +10,7 @@ SECRET_KEY = config('SECRET_KEY')
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 
-ALLOWED_HOSTS = ['localhost','https://www.shielded-brushlands-25084.herokuapp.com/', 'https://shielded-brushlands-25084.herokuapp.com']
+ALLOWED_HOSTS = ['localhost','shielded-brushlands-25084.herokuapp.com','https://www.shielded-brushlands-25084.herokuapp.com/', 'https://shielded-brushlands-25084.herokuapp.com']
 
 
 
