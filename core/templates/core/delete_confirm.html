@@ -1,18 +1,21 @@
 {% extends 'base.html' %}
+{% load bootstrap %}
 
 
 {% block main %}
     
-    
+<div class="row">
+    <div class="col">
 
-<h2>Deseja realmente deletar {{obj}} ?</h2>
+        <h2>Deseja realmente deletar: {{obj}} ?</h2>
 
 
-<form  method="POST">
-    {% csrf_token %}
-    <br>
-    <button type="submit">Confirmar</button>
+        <form  method="POST">
+            {% csrf_token %}
+            <br>
+            <button type="submit" class="btn btn-outline-danger">Confirmar</button>
 
-</form>
-
+        </form>
+    </div>
+</div>
 {% endblock main %}

@@ -4,8 +4,7 @@ from .forms import PessoaForm, CarroForm, MovRotativoForm, MensalistaForm, MovMe
 
 
 def home(request):
-    msg = {'mensagem': 'olá mundo'}
-    return render(request, 'core/index.html',context=msg)
+    return render(request, 'core/index.html')
 
 
 def lista_pessoas(request):
