@@ -1,6 +1,28 @@
 {% extends  'base.html' %}
 {% load bootstrap %}
-
+{% block menu %}
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'core_home' %}">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
+        <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a>
+        <a class="dropdown-item" href="{% url 'core_lista_mensalista' %}">Mensalistas</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item" href="{% url 'core_lista_mov_rotativos' %}">Rotativos</a>
+        <a class="dropdown-item active" href="{% url 'core_lista_mov_mensalista' %}">Movimento Mensal</a>
+      </div>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">Logout</a>
+    </li>
+    
+  </ul>    
+{% endblock menu %}
+    
 {% block main %}
     
 <div class="row">
@@ -19,13 +41,27 @@
         </form>
     </div>
     <div class="col-sm-6">
-        <ul>            
-            {% for mov_Mensalista in mov_Mensalistas %}
-                <li><a href="{% url 'core_mov_mensalista_update' mov_Mensalista.id%}">
-                    {{mov_Mensalista.mensalista}} - {{mov_Mensalista.dt_pgto}} - 
-                    {{mov_Mensalista.total}}</a></li>
-            {% endfor %}    
-        </ul>
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Veiculo</th>
+                <th scope="col">Data Pagamento</th>
+                <th scope="col">Valor</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for mov_Mensalista in mov_Mensalistas %}       
+                <tr>
+                    <th scope="row">{{ mov_Mensalista.id }}</th>
+                    <td><a href="{% url 'core_mov_mensalista_update' mov_Mensalista.id %}">{{ mov_Mensalista.mensalista }}</a></td>              
+                    <td>{{ mov_Mensalista.dt_pgto }}</td>
+                    <td>R$ {{ mov_Mensalista.total }}</td>
+                </tr>
+              {%endfor%} 
+  
+            </tbody>
+          </table>
     </div>
 </div>
 {% endblock main %}
