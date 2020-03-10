@@ -1,10 +1,54 @@
-<h2>Updating Rotativo: {{ movRotativo}}</h2>
+{% extends  'base.html' %}
+{% load bootstrap %}
+
+{% block menu %}
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+      <a class="nav-link " href="{% url 'core_home' %}">Home</a>
+    </li>
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="{% url 'core_lista_pessoas' %}">Pessoas</a>
+        <a class="dropdown-item" href="{% url 'core_lista_veiculos' %}">Veiculos</a>
+        <a class="dropdown-item" href="{% url 'core_lista_mensalista' %}">Mensalistas</a>
+        <div class="dropdown-divider"></div>
+        <a class="dropdown-item active" href="{% url 'core_lista_mov_rotativos' %}">Rotativos</a>
+        <a class="dropdown-item" href="{% url 'core_lista_mov_mensalista' %}">Movimento Mensal</a>
+      </div>
+    </li>
+    {% if user.is_authenticated %}
+    
+    <li class="nav-item ">
+      <a class="nav-link disabled" href="#">Olá, {{user}}</a>
+    </li> 
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+    </li>
+    {% else %}
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'login' %}">Login</a>
+    </li>
+    {% endif %}
+  </ul>    
+{% endblock menu %}
+    
 
 
-<form action="{% url 'core_mov_rotativos_update' movRotativo.id%}" method="post">
-    {% csrf_token %}
-    {{form.as_p}}
+{% block main %}
+    
+<div class="row">    
+    <div class="col">
+        <h2>Updating Rotativo: {{ movRotativo}}</h2>
+        <br>
+        <form action="{% url 'core_mov_rotativos_update' movRotativo.id%}" method="post">
+            {% csrf_token %}
+            {{form|bootstrap}}  
+            
 
-    <button type="submit">Salvar</button>
-</form>
-<a href="{% url 'core_mov_rotativos_delete' movRotativo.id%}"><button>Deletar</button></a>
+            <button type="submit" class="btn btn-primary">Salvar</button>
+            <a href="{% url 'core_mov_rotativos_delete' movRotativo.id%}" class="btn btn-outline-danger">Deletar</a>
+        </form>
+    </div>
+</div>
+{% endblock main %}
