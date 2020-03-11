@@ -1,13 +1,51 @@
 {% extends 'website/base.html' %}
 {% load bootstrap %}
+{% load static %}
 
 {% block main %}
 <div class="row">
-    <div class="col">
-        <h1>Deu Certo</h1>
+    <div class="col-sm-6 float-right">
+        <img class="img-fluid w-100 h-auto" src="{% static 'img/logo_header.jpg' %}" alt="logo E-park">
+    </div>
+    <div class="col-sm-6 ">
+        {% include 'website/menu.html' %}
+        <h2 class="font-weight-bold ">Proteçao e Comodidade</h2>
     </div>
 </div>
-    
+<div class="row">
+    <div class="col-sm-12">
+        <h2 class="h2 text-center mb-5 mt-5 border-bottom">Principal</h2>
+    </div>
+</div>
+<div class="row border-bottom">
+    <div class="col-sm text-justify">
+        <p class=""> O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+    </div>    
+    <div class="col-sm text-justify ">
+        <p> O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+    </div>    
+</div>
+<div class="row border-bottom">
+    <div class="col-sm-4 mt-5 text-justify">
+        <p> O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+
+    </div>
+    <div class="col-sm-4 mt-5">
+        <img class="img-thumbnail" src="{% static 'img/fachada.png' %}" alt="foto da fachada do estacionamento">
+    </div>
+    <div class="col-sm-4 mt-5 text-justify bord">
+        <p> O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+    </div>
+</div>
+<div class="row border-bottom mt-5">
+    <div class="col-sm text-justify">
+        <p class=""> O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+    </div>    
+    <div class="col-sm text-justify ">
+        <p> O Lorem Ipsum é um texto modelo da indústria tipográfica e de impressão. O Lorem Ipsum tem vindo a ser o texto padrão usado por estas indústrias desde o ano de 1500, quando uma misturou os caracteres de um texto para criar um espécime de livro. Este texto não só sobreviveu 5 séculos, mas também o salto para a tipografia electrónica, mantendo-se essencialmente inalterada. Foi popularizada nos anos 60 com a disponibilização das folhas de Letraset, que continham passagens com Lorem Ipsum, e mais recentemente com os programas de publicação como o Aldus PageMaker que incluem versões do Lorem Ipsum.</p>
+    </div>    
+</div>
+{% include 'website/footer.html' %}
 {% endblock main %}
     
 
