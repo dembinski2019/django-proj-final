@@ -1,0 +1,67 @@
+{% extends 'website/base.html' %}
+{% load bootstrap %}
+{% load static %}
+
+
+{% block main %}
+<div class="row mb-5">
+    <div class="col-mb-6">
+        <h2>Contato</h2>
+    </div>
+</div>
+<div class="row mb-5 mb-5 border-bottom">  
+    <div class="col-6">
+      <p>{{mensagem}}</p>
+
+        <form method="POST">
+          {% csrf_token %}
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="inputEmail4">Email</label>
+                <input type="email" class="form-control" name="email" id="inputEmail4" placeholder="Email">
+              </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputNome">Nome</label>
+                    <input type="text" class="form-control" id="inputNome" name ="nome" placeholder="Nome">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputSobrenome">Sobrenome</label>
+                    <input type="text" class="form-control" id="inputSobrenome" name ="sobrenome" placeholder="Sobrenome">
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="inputEndereco">Endereço</label>
+              <input type="text" class="form-control" id="inputEndereco" name ="endereco" placeholder="Endereço">
+            </div>
+            <div class="form-row">
+                <textarea class="form-control" name="mensagem" id="mensagem"  rows="10" name ="mensagem" placeholder="Digite sua mensagem"></textarea>
+            </div>
+            
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck" name="notitcias">
+                <label class="form-check-label" for="gridCheck">
+                  Receber Notícias
+                </label>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+    </div>
+    
+    <div class="col-6">
+        <p>Mussum Ipsum, cacilds vidis litro abertis. Sapien in monti palavris qui num significa nadis i pareci latim. Quem num gosta di mim que vai caçá sua turmis! Mauris nec dolor in eros commodo tempor. Aenean aliquam molestie leo, vitae iaculis nisl. Delegadis gente finis, bibendum egestas augue arcu ut est.</p>
+
+        <iframe class="border" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1978.7484567617519!2d-55.31223104789487!3d-7.2979320989548375!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x92f8bd4c7f2df42f%3A0x215bb5badbb7a6e5!2sBR-163%2C%20Novo%20Progresso%20-%20PA%2C%2068193-000!5e0!3m2!1spt-BR!2sbr!4v1583945453894!5m2!1spt-BR!2sbr" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+        </iframe>
+    </div>
+</div>
+
+
+
+
+
+{% include 'website/footer.html' %}
+{% endblock main %}
